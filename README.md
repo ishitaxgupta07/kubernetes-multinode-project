@@ -1,8 +1,8 @@
-\# Multi-Node Kubernetes Cluster with Multiple Applications and Replicas
+﻿# Multi-Node Kubernetes Cluster with Multiple Applications and Replicas
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -14,11 +14,11 @@ The applications are deployed with multiple replicas to demonstrate pod distribu
 
 
 
-\## Applications
+## Applications
 
 
 
-\### 1. Product Catalog (AppA)
+### 1. Product Catalog (AppA)
 
 
 
@@ -28,11 +28,11 @@ Provides a list of available products through the `/products` endpoint.
 
 Sample products:
 
-\- Laptop — 1200
+\- Laptop â€” 1200
 
-\- Phone — 800
+\- Phone â€” 800
 
-\- Headphones — 150
+\- Headphones â€” 150
 
 
 
@@ -40,7 +40,7 @@ Sample products:
 
 
 
-\### 2. Shopping Cart (AppB)
+### 2. Shopping Cart (AppB)
 
 
 
@@ -48,9 +48,9 @@ Provides endpoints to view and add items to a shopping cart.
 
 
 
-\- `GET /cart` — retrieves cart contents.
+\- `GET /cart` â€” retrieves cart contents.
 
-\- `POST /cart` — adds an item to the cart.
+\- `POST /cart` â€” adds an item to the cart.
 
 
 
@@ -62,7 +62,7 @@ Note: The cart is stored in application memory. Each replica has its own separat
 
 
 
-\## Technologies Used
+## Technologies Used
 
 
 
@@ -82,7 +82,7 @@ Note: The cart is stored in application memory. Each replica has its own separat
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -90,29 +90,29 @@ Note: The cart is stored in application memory. Each replica has its own separat
 
 kubernetes-multinode-project/
 
-├── product\_catalog.py
+â”œâ”€â”€ product\_catalog.py
 
-├── shopping\_cart.py
+â”œâ”€â”€ shopping\_cart.py
 
-├── Dockerfile.product
+â”œâ”€â”€ Dockerfile.product
 
-├── Dockerfile.shopping
+â”œâ”€â”€ Dockerfile.shopping
 
-├── product\_catalog\_deployment.yaml
+â”œâ”€â”€ product\_catalog\_deployment.yaml
 
-├── shopping\_cart\_deployment.yaml
+â”œâ”€â”€ shopping\_cart\_deployment.yaml
 
-├── product\_catalog\_service.yaml
+â”œâ”€â”€ product\_catalog\_service.yaml
 
-├── shopping\_cart\_service.yaml
+â”œâ”€â”€ shopping\_cart\_service.yaml
 
-└── README.md
+â””â”€â”€ README.md
 
 ```
 
 
 
-\## Architecture
+## Architecture
 
 
 
@@ -134,11 +134,11 @@ Kubernetes Services expose both applications through NodePort.
 
 
 
-\## Setup and Deployment
+## Setup and Deployment
 
 
 
-\### 1. Start the Minikube cluster
+### 1. Start the Minikube cluster
 
 
 
@@ -154,7 +154,7 @@ If the profile already exists, check its status before starting it again.
 
 
 
-\### 2. Build Docker images
+### 2. Build Docker images
 
 
 
@@ -168,7 +168,7 @@ docker build -t shopping-cart:latest -f Dockerfile.shopping .
 
 
 
-\### 3. Load images into Minikube
+### 3. Load images into Minikube
 
 
 
@@ -182,7 +182,7 @@ minikube -p devops-multinode image load shopping-cart:latest
 
 
 
-\### 4. Deploy applications
+### 4. Deploy applications
 
 
 
@@ -196,7 +196,7 @@ kubectl --context=devops-multinode apply -f shopping\_cart\_deployment.yaml
 
 
 
-\### 5. Create Services
+### 5. Create Services
 
 
 
@@ -210,7 +210,7 @@ kubectl --context=devops-multinode apply -f shopping\_cart\_service.yaml
 
 
 
-\### 6. Verify nodes and pods
+### 6. Verify nodes and pods
 
 
 
@@ -238,11 +238,11 @@ Expected deployment:
 
 
 
-\## Testing
+## Testing
 
 
 
-\### Product Catalog
+### Product Catalog
 
 
 
@@ -262,7 +262,7 @@ Open the displayed URL with `/products` appended. The endpoint should return the
 
 
 
-\### Shopping Cart
+### Shopping Cart
 
 
 
@@ -322,7 +322,7 @@ The POST request should return the added item with its ID, name, and quantity.
 
 
 
-\## Results
+## Results
 
 
 
@@ -344,7 +344,7 @@ The deployment was verified successfully:
 
 
 
-\## Learning Outcomes
+## Learning Outcomes
 
 
 
@@ -361,6 +361,7 @@ The deployment was verified successfully:
 \- Testing HTTP GET and POST endpoints.
 
 \- Verifying pod placement and application availability.
+
 
 
 
